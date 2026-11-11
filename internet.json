@@ -1,0 +1,60 @@
+{
+  "judul": "Penyebab ganuggan pada Jaringan Internet",
+  "batas": "Pengetahuan yang digunakan berasal dari jurnal akademik tentang diagnosa gangguan WiFi rumah. Aturan hanya mencakup masalah umum di sisi pelanggan seperti penempatan router, kelebihan beban bandwidth, indikator lampu modem (LOS/Internet/WLAN), serta kondisi kabel patchcord. Hasil yang ditampilkan merupakan saran awal dan bukan keputusan teknis final. Untuk gangguan massal, kerusakan di tiang/ODP, atau masalah yang membutuhkan teknisi, silakan hubungi call center provider.",
+  "sumber": {
+    "S1": "MONITORING DAN ANALISIS RESPONS PENGGUNA TERHADAP GANGGUAN JARINGAN INTERNET DI PT. TELKOM WITEL KARAWANG, https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://ejournal.itn.ac.id/index.php/jati/article/download/10023/6316&ved=2ahUKEwisl9ixzuqXAxV2wzgGHccAIgQQFnoECCwQAQ&usg=AOvVaw2EOapGFJh_pKHTNZ9GzM-f, diakses 3 Nov 2026",
+    "S2": "Sistem Pakar untuk Mendeteksi Kerusakan Jaringan Internet pada Indihome di Pematangsiantar, https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://jiki.jurnal-id.com/index.php/jiki/article/download/17/13&ved=2ahUKEwisl9ixzuqXAxV2wzgGHccAIgQQFnoECDEQAQ&usg=AOvVaw1vv6zMhJ8whAJUEDBTB27W, diakses 3 Nov 2026",
+    "S3": "Analisis Gangguan Umum Pada Jaringan WI-FI Rumah Di RT 6/ RW 2 Kelurahan Lawangan Daya dan Upaya Penanganannya, https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://ejournal.omahtabing.com/knj/article/download/120/400&ved=2ahUKEwisl9ixzuqXAxV2wzgGHccAIgQQFnoECBsQAQ&usg=AOvVaw3hAxUgQnrHGB6sdA5V6PDU, diakses 3 Nov 2026"
+  },
+  "aturan": [
+    {
+      "id": "R1",
+      "jika": ["router di dalam lemari tertutup", "router dekat dinding tebal"],
+      "mode": "atau",
+      "maka": "sinyal terhalang",
+      "sumber": "S3"
+    },
+    {
+      "id": "R2",
+      "jika": ["sinyal terhalang", "nama wifi tidak muncul"],
+      "mode": "dan",
+      "maka": "sinyal wifi lemah atau hilang",
+      "sumber": "S3"
+    },
+    {
+      "id": "R3",
+      "jika": ["banyak perangkat aktif", "kecepatan internet lambat"],
+      "mode": "dan",
+      "maka": "kelebihan beban bandwidth",
+      "sumber": "S1"
+    },
+    {
+      "id": "R4",
+      "jika": ["lampu LOS merah", "lampu internet mati"],
+      "mode": "atau",
+      "maka": "gangguan sinyal optik",
+      "sumber": "S2"
+    },
+    {
+      "id": "R5",
+      "jika": ["gangguan sinyal optik", "kabel patchcord longgar atau rusak"],
+      "mode": "dan",
+      "maka": "kabel fiber bermasalah",
+      "sumber": "S2"
+    },
+    {
+      "id": "R6",
+      "jika": ["ada pesan maintenance", "internet putus total"],
+      "mode": "dan",
+      "maka": "gangguan dari sisi provider",
+      "sumber": "S1"
+    },
+    {
+      "id": "R7",
+      "jika": ["modem sering restart sendiri", "lampu WLAN mati"],
+      "mode": "atau",
+      "maka": "modem overheat atau hardware bermasalah",
+      "sumber": "S1"
+    }
+  ]
+}
